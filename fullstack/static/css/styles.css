@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'Playfair';
+    src: local('Playfair'), url(../fonts/PlayfairDisplay.ttf);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #E6E2DD;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    top: 0px;
+
+    border-radius: 0px 0px 25px 0px;
+    background: #D48166;
+    box-shadow: 0px 10px 20px 5px rgba(55, 58, 54, 0.25);
+    z-index: 99999999;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    bottom: 0;
+    border-radius: 0px 25px 0px 0px;
+    background: rgba(55, 58, 54, 0.50);
+    display: flex;
+    align-items: center;
+}
+
+footer p {
+    font-family: "Playfair";
+    font-size: 24px;
+    margin-left: 42.5%;
+    color: #FFF;
+}
+
+
+a {
+    color: #F64C72 !important;
+    text-decoration: none
+}
+
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 15px;
+    margin-left: 30%;
+}
+
+.name {
+    margin-left: 35%;
+    width: 50%;
+    height: 51px;
+    margin-top: -110px;
+
+    font-family: 'Playfair';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    text-align: center;
+    flex-direction: row;
+    color: #373A36;
+
+}
+
+.navigation {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 999999;
+    background: rgba(212, 129, 102, 0.50);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.nav_text {
+    font-family: "Playfair";
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    color: #000000;
+
+}
+
+.nav_text_foot {
+    font-family: "Playfair";
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #000000;
+}
+
+.navigation ul {
+    text-align: left;
+    list-style: none;
+    padding-top: 60%;
+}
+
+.navigation li {
+    margin: 55px -30px;
+    font-family: "Playfair";
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.navigation li a {
+    color: #000000 !important; /*ЦВЕТ ТЕКСТА МЕНЮ*/
+}
+
+.navigation li a:hover {
+    color: #000000 !important; /*ЦВЕТ ТЕКСТА МЕНЮ*/
+    text-decoration: none;
+    border-bottom: 2px solid #000000;
+}
+
+
+.foot{
+    position: absolute;
+    font-family: 'Playfair';
+    font-size: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    bottom: 10px;
+    left: 300px;
+}
+
+.home_text {
+    position: absolute;
+    left: 310px;
+    top: 120px;
+}
+
+.home_text p {
+    font-size: 15px;
+    font-family: 'Playfair';
+    color: #000;
+    text-wrap: normal;
+}
+
+.home_text h3 {
+    text-align: center;
+    font-family: 'Playfair';
+    color: #000;
+}
+
+.home_text li {
+    font-family: 'Playfair';
+    color: #000;
+}
+
+.home_text h1 {
+    font-family: 'Playfair';
+    width: 600px;
+    color: #000;
+    position: absolute;
+    left: 400px;
+    top: -15px
+}
+
+.home_img {
+    position:absolute;
+    width: 500px;
+    height: 450px;
+    right: 35px;
+    top: 550px;
+}
+
+ .empty {
+     height: 40px;
+ }
+
+.demand_graph_1 {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+
+.demand_graph_2 {
+    width: 400px;
+    height: 300px;
+    left: 20px;
+    position: absolute;
+    top: 300px
+}
+
+.tables {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+    position: absolute;
+    left: 500px;
+    top: 50px
+}
+
+.tables table {
+    color: #000;
+}
+
+.geography_graph_1 {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+
+.geography_graph_2 {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 300px;
+    left: 20px;
+}
+
+.graph_title1 {
+    font-family: "Playfair";
+    position: absolute;
+    z-index: 999999;
+    color: #000;
+    top: -45px;
+    left: 120px;
+    width: 300px;
+}
+
+.graph_title2 {
+    font-family: "Playfair";
+    position: absolute;
+    z-index: 999999;
+    color: black;
+    left: 120px;
+    top: 290px;
+    width: 300px;
+}
+
+.tables_skills {
+    display: flex;
+
+    flex-direction: row;
+
+    position: absolute;
+    left: 0;
+    top: 50px;
+
+}
+
+.tables_skills table {
+    color: #000;
+}
+
+.skills_graph {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    left: 400px;
+    top: 380px
+}
+
+.empty_skills {
+    height: 750px;
+}
+
+.last_text {
+    font-family: 'Playfair';
+    width: 600px;
+    color: #000;
+    position: absolute;
+    left: 100px;
+    top: -15px
+}
+
+.LVtable {
+    left: 300px;
+    top: 200px;
+    position: absolute;
+    color: #000;
+}
+
+.LVtable p {
+    color: #000;
+}
+
+.navigate_page {
+    color: #FFFFFF;
+}
