@@ -11,3 +11,8 @@ class IndexView(ListView):
 class Importance(ListView):
     model = JobDemand
     template_name = 'importance.html'
+
+
+class Geography(ListView):
+    model = CityStatistics
+    template_name = 'geography.html'

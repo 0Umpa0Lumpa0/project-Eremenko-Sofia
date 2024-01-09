@@ -18,3 +18,14 @@ class JobDemand(models.Model):
 
     def __str__(self):
         return 'Востребованность'
+
+
+class CityStatistics(models.Model):
+    salary_level_chart = models.ImageField(upload_to='admin_data/salary_level/%Y/%m/%d', blank=False,
+                                           verbose_name='График уровня зарплаты по городам')
+    vacancy_fraction_chart = models.ImageField(upload_to='admin_data/vacancy_fraction/%Y/%m/%d', blank=False,
+                                               verbose_name='График доли вакансий по городам')
+    statistics_table = models.TextField(blank=False, verbose_name='Таблица статистики')
+
+    def __str__(self):
+        return 'География'

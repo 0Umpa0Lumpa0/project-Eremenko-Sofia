@@ -6,5 +6,6 @@ from my_vacancy.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    path('importance', Importance.as_view(), name='importance')
+    path('importance', Importance.as_view(), name='importance'),
+    path('geography', Geography.as_view(), name='geography')
 ]
