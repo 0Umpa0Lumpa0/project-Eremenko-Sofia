@@ -16,3 +16,8 @@ class Importance(ListView):
 class Geography(ListView):
     model = CityStatistics
     template_name = 'geography.html'
+
+class SkillSet(ListView):
+    model = SkillSet
+    template_name = 'skillset.html'
+

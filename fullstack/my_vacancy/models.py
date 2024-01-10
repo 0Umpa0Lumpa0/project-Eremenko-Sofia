@@ -29,3 +29,12 @@ class CityStatistics(models.Model):
 
     def __str__(self):
         return 'География'
+
+
+class SkillSet(models.Model):
+    header_table = models.TextField(blank=False, verbose_name='Название таблицы', max_length=30)
+    table = models.TextField(blank=False, verbose_name='Таблица')
+    graph = models.ImageField(upload_to='images_db/%Y/%m/%d', blank=False, verbose_name='График по скиллам')
+
+    def __str__(self):
+        return 'Навыки'
