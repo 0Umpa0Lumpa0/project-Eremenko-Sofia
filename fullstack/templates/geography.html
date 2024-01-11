@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Специалист технической поддержки</title>
+    <title>Fullstack-разработчик</title>
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
 </head>
 <body>
 <header>
     <img class="logo" src="{% static 'images/logotip.png' %}">
     <div class="name">
-        <p>Специалист технической поддержки</p>
+        <p>Fullstack-разработчик</p>
     </div>
 </header>
 <main>
@@ -25,6 +25,8 @@
                     <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 30px"
                            href={% url 'geography' %}>География</a></li>
                     <li><a href={% url 'skillset' %}>Навыки</a></li>
+                    <li><a href={% url 'lastVacancy' %}>Последние вакансии</a></li>
+
 
                 </ul>
             </nav>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullstack-разработчик</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+<body>
+<header>
+    <img class="logo" src="{% static 'images/logotip.png' %}">
+    <div class="name">
+        <p>Fullstack-разработчик</p>
+    </div>
+</header>
+<main>
+    <div class="body">
+        <div class="navigation" style="height: 1200px">
+            <div style="width: 90%; background: black; height: 2px; margin-left: 5%"></div>
+            <nav>
+                <ul>
+                    <li><a href="/">Главная страница</a></li>
+                    <li><a href={% url 'demend' %}>Востребованность</a></li>
+                    <li><a href={% url 'geography' %}>География</a></li>
+                    <li><a href={% url 'skills' %}>Навыки</a></li>
+                    <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 28px" href={% url 'lastVacancy' %}>Последние вакансии</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text">
+            <h1 style="margin-top: 100px">Последние вакансии</h1>
+            <div class="empty_skills"></div>
+        </div>
+        <div class="LVtable">
+            {% for i in vacs %}
+            <h3>{{ i.name }}</h3>
+            <p>Описание: {{ i.description }}</p>
+            <p>Навыки: {{ i.key_skills }}</p>
+            <p>Компания: {{ i.employer }}</p>
+            <p>Зарплата: {{ i.salary }}</p>
+            <p>Город: {{ i.area }}</p>
+            <p>Дата публикации: {{ i.published_at }}</p>
+            <p>Ссылка: {{ i.alternate_url }}</p>
+        {% endfor %}
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Еременко София Станиславовна АТ-02</p>
+</footer>
+</body>
+</html>
