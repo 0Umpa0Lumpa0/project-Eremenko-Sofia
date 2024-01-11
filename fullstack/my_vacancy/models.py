@@ -38,3 +38,11 @@ class SkillSet(models.Model):
 
     def __str__(self):
         return 'Навыки'
+
+
+class RecentVacancies(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Заголовок работы')
+    content_to_parse = models.TextField(blank=False, verbose_name='Текст вакансии для парсинга', max_length=15)
+
+    def __str__(self):
+        return 'Последние вакансии'
