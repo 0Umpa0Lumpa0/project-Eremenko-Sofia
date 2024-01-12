@@ -4,90 +4,46 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullstack-разработчик</title>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-</head>
-<body>
-<header>
-    <img class="logo" src="{% static 'images/logotip.png' %}">
-    <div class="name">
-        <p>Fullstack-разработчик</p>
-    </div>
-</header>
-<main>
-    <div class="body">
+    {% for nav in navigation %}
+        <title>{{ nav.vacancy_title }}</title>
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        </head>
+        <body>
+        <header>
+            <img class="logo" src="{{ nav.logo_image.url }}">
+            <div class="name">
+                <p>{{ nav.vacancy_title }}</p>
+            </div>
+        </header>
+        <main>
+        <div class="body">
         <div class="navigation" style="height: 1200px">
             <nav>
                 <ul>
-                    <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 30px" href="/">Главная
-                        страница</a></li>
-                    <li><a href={% url 'importance' %}>Востребованность</a></li>
-                    <li><a href={% url 'geography' %}>География</a></li>
-                    <li><a href={% url 'skillset' %}>Навыки</a></li>
-                    <li><a href={% url 'recant_vacs' %}>Последние вакансии</a></li>
+                    <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 30px"
+                           href="/">{{ nav.first_menu_item }}</a></li>
+                    <li><a href={% url 'importance' %}>{{ nav.second_menu_item }}</a></li>
+                    <li><a href={% url 'geography' %}>{{ nav.third_menu_item }}</a></li>
+                    <li><a href={% url 'skillset' %}>{{ nav.fourth_menu_item }}</a></li>
+                    <li><a href={% url 'recant_vacs' %}>{{ nav.fifth_menu_item }}</a></li>
 
                 </ul>
             </nav>
         </div>
-        <div class="home_text">
-            <h3>Чем занимается фулстек‑разработчик</h3>
-            <p>Программист full stack (от англ. full stack ― полный набор) — это
-                универсальный боец, который может заменить фронтенд- и бэкенд-
-                разработчика и самостоятельно написать всё приложение или сайт.</p>
-            <h3>Знания и навыки fullstack‑разработчиков</h3>
-            <p>Поскольку фулстек-разработчик ― специалист широкого профиля, который
-                отвечает и за фронтенд, и за бэкенд, для работы ему нужно разбираться в
-                каждом направлении. Вот список того, что должен знать fullstack-
-                разработчик, чтобы в одиночку писать приложения и сайты: </p>
-            <p>&emsp;&emsp;
-                Языки разметки и программирования для создания интерфейса —
-                HTML, CSS, JavaScript. С их помощью разработчик задаёт структуру
-                приложения или сайта, распределяет — что где будет находиться. Создаёт
-                формы и кнопки, делает интерфейс красивым и интерактивным. Все три
-                языка используются во фронтенд-разработке и являются обязательными для
-                fullstack-программиста. </p>
-            <p>&emsp;&emsp;
-                Языки программирования для создания серверной части. Например,
-                JavaScript, Python или PHP — для веб- и десктоп-приложений, Java или Swift
-                — для мобильных приложений. Фулстек-разработчику нужно хорошо
-                владеть каким-то одним из этих языков программирования и на среднем
-                уровне знать ещё несколько.
-            </p>
-            <p>&emsp;&emsp;
-                Платформы, библиотеки и фреймворки для ускорения разработки
-                сайтов и приложений. Среди самых распространённых можно выделить
-                фреймворки Angular, Express.js, Nest.js и Vue, библиотеку для создания
-                пользовательских интерфейсов React и программную платформу Node.js. Эти
-                инструменты избавляют разработчиков от необходимости каждый раз писать
-                типовой код заново. Фулстек-разработчику достаточно знать по одному из
-                инструментов в каждой категории.
-            </p>
-            <p>&emsp;&emsp; Системы управления базами данных (СУБД). Среди самых
-                распространённых — MongoDB, MySQL, PostgreSQL. Для последних двух
-                также нужно знать язык запросов SQL.</p>
-            <p>&emsp;&emsp;Особенности работы платформ. Очень многое зависит от особенностей
-                платформы, под которую пишется сайт или приложение. Если это веб-
-                приложение, программисту нужно знать тонкости разработки под разные
-                браузеры. Если приложение под мобильные устройства, придётся иметь дело
-                с особенностями Android или iOS. При разработке приложений под Windows
-                или MacOS нужно учитывать некоторые их нюансы. </p>
-            <p>&emsp;&emsp;Принципы работы http-протоколов и веб-серверов — для понимания,
-                как взаимодействуют компьютеры в сети.</p>
-            <p>Набор инструментов и технологий, необходимых программисту для создания
-                полноценного продукта, называют стеком (от англ. stack). Понятие стек
-                включает в себя языки программирования, фреймворки, библиотеки,
-                программные платформы, среды разработки и СУБД — всё, что может
-                понадобиться программисту для работы над проектом.</p>
-            <p>Под каждый проект нужен свой набор инструментов, поэтому стеки бывают
-                разные.
-            </p>
+    {% endfor %}
+    <div class="home_text">
+        {% for context in context %}
+            {{ context.data|safe }}
             <div class="empty"></div>
-            <img class="home_img" src="{% static 'images/Fullstack.jpg' %}"/>
-        </div>
+            <img class="home_img" src="{{ context.photo.url }}"/>
+        {% endfor %}
     </div>
-</main>
-<footer>
-    <p>Еременко София Станиславовна АТ-02</p>
-</footer>
-</body>
+    </div>
+    </main>
+    <footer>
+        {% for nav in navigation %}
+            <p>{{ nav.author_name }}</p>
+        {% endfor %}
+    </footer>
+    </body>
 </html>
