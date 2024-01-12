@@ -46,3 +46,17 @@ class RecentVacancies(models.Model):
 
     def __str__(self):
         return 'Последние вакансии'
+
+
+class Navigations(models.Model):
+    vacancy_title = models.TextField(blank=False, verbose_name='Заголовок вакансии', max_length=100)
+    logo_image = models.ImageField(upload_to='images_db/%Y/%m/%d', blank=False, verbose_name='Логотип')
+    first_menu_item = models.TextField(blank=False, verbose_name='Первый пункт меню', max_length=25)
+    second_menu_item = models.TextField(blank=False, verbose_name='Второй пункт меню', max_length=25)
+    third_menu_item = models.TextField(blank=False, verbose_name='Третий пункт меню', max_length=25)
+    fourth_menu_item = models.TextField(blank=False, verbose_name='Четвертый пункт меню', max_length=25)
+    fifth_menu_item = models.TextField(blank=False, verbose_name='Пятый пункт меню', max_length=25)
+    author_name = models.TextField(blank=False, verbose_name='Автор', max_length=50)
+
+    def __str__(self):
+        return 'Навигация'

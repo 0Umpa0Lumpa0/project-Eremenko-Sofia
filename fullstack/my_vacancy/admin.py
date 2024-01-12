@@ -1,3 +1,7 @@
 from django.contrib import admin
+from my_vacancy.models import *
 
-# Register your models here.
+
+@admin.register(MainInfo, JobDemand, CityStatistics, SkillSet, RecentVacancies, Navigations)
+class MyModelAdmin(admin.ModelAdmin):
+    pass
