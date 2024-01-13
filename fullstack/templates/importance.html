@@ -4,331 +4,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullstack-разработчик</title>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-</head>
-<body>
-<header>
-    <img class="logo" src="{% static 'images/logotip.png' %}">
-    <div class="name">
-        <p>Fullstack-разработчик</p>
-    </div>
-</header>
-<main>
-    <div class="body">
+    {% for nav in navigation %}
+        <title>{{ nav.vacancy_title }}</title>
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        </head>
+        <body>
+        <header>
+            <img class="logo" src="{{ nav.logo_image.url }}">
+            <div class="name">
+                <p>{{ nav.vacancy_title }}</p>
+            </div>
+        </header>
+        <main>
+        <div class="body">
         <div class="navigation" style="height: 1200px">
-            <div style="width: 90%; background: black; height: 2px; margin-left: 5%"></div>
             <nav>
                 <ul>
-                    <li><a href="/">Главная страница</a></li>
-                    <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 30px"
-                           href={% url 'importance' %}>Востребованность</a></li>
-                    <li><a href={% url 'geography' %}>География</a></li>
-                    <li><a href={% url 'skillset' %}>Навыки</a></li>
-                    <li><a href={% url 'recant_vacs' %}>Последние вакансии</a></li>
-
+                    <li><a href="/">{{ nav.first_menu_item }}</a></li>
+                    <li><a style="-webkit-text-stroke: 1px #000; color: #D48166 !important; font-size: 30px;"
+                           href={% url 'importance' %}>{{ nav.second_menu_item }}</a></li>
+                    <li><a href={% url 'geography' %}>{{ nav.third_menu_item }}</a></li>
+                    <li><a href={% url 'skillset' %}>{{ nav.fourth_menu_item }}</a></li>
+                    <li><a href={% url 'recant_vacs' %}>{{ nav.fifth_menu_item }}</a></li>
 
                 </ul>
             </nav>
         </div>
-        <div class="home_text" style="top: 200px">
-            <img class="demand_graph_1" src="{% static 'images/1.png' %}"/>
-            <img class="demand_graph_2" src="{% static 'images/2.png' %}"/>
+    {% endfor %}
+    <div class="home_text" style="margin-top: 50px;">
+       {% for data in context %}
+            <img class="demand_graph_1" src="{{ data.salary_level_chart.url }}"/>
+            <img class="demand_graph_2" src="{{ data.vacancy_count_chart.url }}"/>
             <div class="tables">
-                <table border="1" class="dataframe">
-                    <thead>
-                    <tr style="text-align: right;">
-                        <th></th>
-                        <th>Количество вакансий - fullstack</th>
-                    </tr>
-                    <tr>
-                        <th>Год</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th>2014</th>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <th>2015</th>
-                        <td>52</td>
-                    </tr>
-                    <tr>
-                        <th>2016</th>
-                        <td>224</td>
-                    </tr>
-                    <tr>
-                        <th>2017</th>
-                        <td>459</td>
-                    </tr>
-                    <tr>
-                        <th>2018</th>
-                        <td>939</td>
-                    </tr>
-                    <tr>
-                        <th>2019</th>
-                        <td>1106</td>
-                    </tr>
-                    <tr>
-                        <th>2020</th>
-                        <td>1419</td>
-                    </tr>
-                    <tr>
-                        <th>2021</th>
-                        <td>2215</td>
-                    </tr>
-                    <tr>
-                        <th>2022</th>
-                        <td>1746</td>
-                    </tr>
-                    <tr>
-                        <th>2023</th>
-                        <td>1482</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table border="1" class="dataframe">
-                    <thead>
-                    <tr style="text-align: right;">
-                        <th></th>
-                        <th>Количество вакансий</th>
-                    </tr>
-                    <tr>
-                        <th>Год</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th>2005</th>
-                        <td>1836</td>
-                    </tr>
-                    <tr>
-                        <th>2006</th>
-                        <td>16229</td>
-                    </tr>
-                    <tr>
-                        <th>2007</th>
-                        <td>24000</td>
-                    </tr>
-                    <tr>
-                        <th>2008</th>
-                        <td>30627</td>
-                    </tr>
-                    <tr>
-                        <th>2009</th>
-                        <td>20989</td>
-                    </tr>
-                    <tr>
-                        <th>2010</th>
-                        <td>31930</td>
-                    </tr>
-                    <tr>
-                        <th>2011</th>
-                        <td>42282</td>
-                    </tr>
-                    <tr>
-                        <th>2012</th>
-                        <td>49309</td>
-                    </tr>
-                    <tr>
-                        <th>2013</th>
-                        <td>68149</td>
-                    </tr>
-                    <tr>
-                        <th>2014</th>
-                        <td>75828</td>
-                    </tr>
-                    <tr>
-                        <th>2015</th>
-                        <td>78934</td>
-                    </tr>
-                    <tr>
-                        <th>2016</th>
-                        <td>85740</td>
-                    </tr>
-                    <tr>
-                        <th>2017</th>
-                        <td>95811</td>
-                    </tr>
-                    <tr>
-                        <th>2018</th>
-                        <td>149308</td>
-                    </tr>
-                    <tr>
-                        <th>2019</th>
-                        <td>130763</td>
-                    </tr>
-                    <tr>
-                        <th>2020</th>
-                        <td>144137</td>
-                    </tr>
-                    <tr>
-                        <th>2021</th>
-                        <td>216284</td>
-                    </tr>
-                    <tr>
-                        <th>2022</th>
-                        <td>212675</td>
-                    </tr>
-                    <tr>
-                        <th>2023</th>
-                        <td>142752</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table border="1" class="dataframe">
-                    <thead>
-                    <tr style="text-align: right;">
-                        <th></th>
-                        <th>Средняя зарплата - fullstack</th>
-                    </tr>
-                    <tr>
-                        <th>Год</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th>2014</th>
-                        <td>160895</td>
-                    </tr>
-                    <tr>
-                        <th>2015</th>
-                        <td>262737</td>
-                    </tr>
-                    <tr>
-                        <th>2016</th>
-                        <td>158295</td>
-                    </tr>
-                    <tr>
-                        <th>2017</th>
-                        <td>141743</td>
-                    </tr>
-                    <tr>
-                        <th>2018</th>
-                        <td>122973</td>
-                    </tr>
-                    <tr>
-                        <th>2019</th>
-                        <td>150614</td>
-                    </tr>
-                    <tr>
-                        <th>2020</th>
-                        <td>146489</td>
-                    </tr>
-                    <tr>
-                        <th>2021</th>
-                        <td>180651</td>
-                    </tr>
-                    <tr>
-                        <th>2022</th>
-                        <td>202523</td>
-                    </tr>
-                    <tr>
-                        <th>2023</th>
-                        <td>165945</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table border="1" class="dataframe">
-                    <thead>
-                    <tr style="text-align: right;">
-                        <th></th>
-                        <th>Средняя зарплата</th>
-                    </tr>
-                    <tr>
-                        <th>Год</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th>2005</th>
-                        <td>141868</td>
-                    </tr>
-                    <tr>
-                        <th>2006</th>
-                        <td>141839</td>
-                    </tr>
-                    <tr>
-                        <th>2007</th>
-                        <td>153358</td>
-                    </tr>
-                    <tr>
-                        <th>2008</th>
-                        <td>111437</td>
-                    </tr>
-                    <tr>
-                        <th>2009</th>
-                        <td>62682</td>
-                    </tr>
-                    <tr>
-                        <th>2010</th>
-                        <td>55293</td>
-                    </tr>
-                    <tr>
-                        <th>2011</th>
-                        <td>59899</td>
-                    </tr>
-                    <tr>
-                        <th>2012</th>
-                        <td>56781</td>
-                    </tr>
-                    <tr>
-                        <th>2013</th>
-                        <td>62468</td>
-                    </tr>
-                    <tr>
-                        <th>2014</th>
-                        <td>55844</td>
-                    </tr>
-                    <tr>
-                        <th>2015</th>
-                        <td>55780</td>
-                    </tr>
-                    <tr>
-                        <th>2016</th>
-                        <td>66745</td>
-                    </tr>
-                    <tr>
-                        <th>2017</th>
-                        <td>66673</td>
-                    </tr>
-                    <tr>
-                        <th>2018</th>
-                        <td>76127</td>
-                    </tr>
-                    <tr>
-                        <th>2019</th>
-                        <td>77138</td>
-                    </tr>
-                    <tr>
-                        <th>2020</th>
-                        <td>78032</td>
-                    </tr>
-                    <tr>
-                        <th>2021</th>
-                        <td>143783</td>
-                    </tr>
-                    <tr>
-                        <th>2022</th>
-                        <td>99201</td>
-                    </tr>
-                    <tr>
-                        <th>2023</th>
-                        <td>98585</td>
-                    </tr>
-                    </tbody>
-                </table>
+                {{ data.data_table|safe }}
             </div>
-        </div>
+        {% endfor %}
     </div>
-</main>
-<footer>
-    <p>Еременко София Станиславовна АТ-02</p>
-</footer>
-</body>
+    </div>
+    </main>
+    <footer>
+        {% for nav in navigation %}
+            <p>{{ nav.author_name }}</p>
+        {% endfor %}
+    </footer>
+    </body>
 </html>
