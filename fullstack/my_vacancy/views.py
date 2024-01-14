@@ -29,7 +29,6 @@ class BasePageView(View):
             vacancies_data = hh_parser.get_data_vacancies(date='2023-12-20', count_vacancies=10)
 
             context = {'vacancies_data': vacancies_data, 'context': recent_vacancy.title}
-            print(context)
             return context
 
 
