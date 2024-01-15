@@ -24,7 +24,6 @@ class BasePageView(View):
         if recent_vacancy:
             search_text = recent_vacancy.content_to_parse
             date_to_parse = recent_vacancy.date
-            print(date_to_parse)
             hh_parser = HeadHunterParsing(search_text=search_text)
 
             vacancies_data = hh_parser.get_data_vacancies(date=date_to_parse, count_vacancies=10)
